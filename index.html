@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grzyby Kochanów | Sprzedaż świeżych grzybów</title>
+  <meta name="description" content="Lokalna sprzedaż świeżych grzybów w Kochanowie: borowiki, kurki, maślaki i podgrzybki. Odbiór na miejscu i dostawa w okolicy.">
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+  <style>:root {
+  --forest: #102d21;
+  --forest-deep: #071a13;
+  --forest-soft: #284a37;
+  --cream: #f5f0e6;
+  --paper: #fbf8f1;
+  --ink: #173325;
+  --gold: #b9934c;
+  --gold-light: #d4b974;
+  --muted: #667269;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; }
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; }
+.shell { width: min(1280px, calc(100% - 96px)); margin: 0 auto; }
+.hero { min-height: 790px; color: #fff; background: var(--forest-deep) url('images/hero.png') center/cover no-repeat; position: relative; overflow: hidden; }
+.hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(3,18,13,.94) 0%, rgba(5,24,17,.80) 35%, rgba(5,21,15,.18) 70%, rgba(5,21,15,.15) 100%), linear-gradient(0deg, rgba(3,16,11,.45), transparent 50%); }
+.site-header { height: 112px; display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 2; border-bottom: 1px solid rgba(255,255,255,.18); }
+.brand { display: flex; align-items: center; gap: 14px; font-family: Georgia, 'Times New Roman', serif; font-size: 34px; letter-spacing: -.02em; white-space: nowrap; }
+.brand-icon { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 9px; object-fit: contain; }
+.desktop-nav { display: flex; align-items: center; }
+.desktop-nav a { font-size: 15px; font-weight: 600; padding: 12px 38px; border-right: 1px solid rgba(255,255,255,.45); transition: color .2s; }
+.desktop-nav a:last-child { border: 0; padding-right: 0; }
+.desktop-nav a:hover { color: var(--gold-light); }
+.mobile-nav { display: none; }
+.hero-content { position: relative; z-index: 1; padding-top: 110px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .22em; font-size: 12px; font-weight: 700; color: var(--gold-light); margin: 0 0 24px; }
+.eyebrow.green { color: #597863; }
+.eyebrow.gold { color: var(--gold-light); }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; }
+h1 { font-size: clamp(52px, 5.1vw, 78px); line-height: 1.08; letter-spacing: -.038em; max-width: 860px; margin-bottom: 28px; }
+.gold-line { height: 18px; width: 245px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--gold); margin-bottom: 28px; }
+.gold-line .favicon-mark { width: 42px; height: 42px; flex: 0 0 42px; border-radius: 9px; object-fit: contain; transform: translateY(16px); }
+.hero-lead { max-width: 590px; font-size: 20px; line-height: 1.65; color: rgba(255,255,255,.86); margin: 0 0 34px; }
+.hero-actions { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.button { min-height: 58px; display: inline-flex; align-items: center; justify-content: center; gap: 22px; padding: 0 28px; font-size: 15px; font-weight: 700; transition: transform .2s, background .2s; }
+.button:hover { transform: translateY(-2px); }
+.button-light { background: var(--cream); color: var(--forest); border-radius: 3px; }
+.button-light:hover { background: #fff; }
+.button-light span, .button-gold span { font-size: 20px; }
+.availability { min-height: 58px; display: inline-flex; align-items: center; gap: 12px; padding: 0 22px; border: 1px solid var(--gold); border-radius: 3px; color: var(--gold-light); font-weight: 700; font-size: 14px; }
+.availability i { width: 10px; height: 10px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 5px rgba(185,147,76,.12); }
+.notice { background: #d7c38f; color: var(--forest-deep); }
+.notice-inner { min-height: 66px; display: flex; align-items: center; gap: 24px; font-size: 13px; }
+.notice-label { padding: 7px 10px; border: 1px solid rgba(16,45,33,.38); text-transform: uppercase; letter-spacing: .12em; font-size: 10px; font-weight: 800; white-space: nowrap; }
+.notice p { margin: 0; font-weight: 700; }
+.notice-tail { margin-left: auto; opacity: .78; }
+.section { padding: 112px 0; }
+.products-section { background: var(--paper); }
+.section-heading { text-align: center; max-width: 720px; margin: 0 auto 58px; }
+.section-heading h2 { font-size: clamp(42px, 4.2vw, 62px); letter-spacing: -.035em; margin-bottom: 18px; }
+.section-heading > p:last-child { color: var(--muted); font-size: 16px; line-height: 1.7; }
+.product-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.product-card { background: #fff; border: 1px solid #e2ddd2; transition: transform .25s, box-shadow .25s; }
+.product-card:hover { transform: translateY(-7px); box-shadow: 0 18px 40px rgba(22,47,34,.11); }
+.product-image { aspect-ratio: 1/.87; overflow: hidden; position: relative; background: #ece9df; }
+.product-image img { height: 100%; object-fit: cover; transition: transform .5s; }
+.product-card:hover img { transform: scale(1.035); }
+.product-image > span { position: absolute; top: 16px; left: 16px; background: rgba(245,240,230,.92); color: var(--forest); padding: 7px 10px; font-size: 9px; letter-spacing: .13em; text-transform: uppercase; font-weight: 800; }
+.product-copy { padding: 23px 24px 27px; }
+.product-copy p { color: var(--gold); font-size: 10px; letter-spacing: .13em; text-transform: uppercase; font-weight: 800; margin-bottom: 9px; }
+.product-copy h3 { font-size: 31px; margin-bottom: 10px; }
+.product-copy span { color: var(--muted); font-size: 13px; line-height: 1.55; }
+.season-note { margin: 38px auto 0; display: flex; align-items: center; justify-content: center; gap: 12px; color: #6d766f; font-size: 13px; }
+.season-note .favicon-mark { width: 30px; height: 30px; flex: 0 0 30px; border-radius: 7px; object-fit: contain; }
+.forest-band { position: relative; padding: 112px 0; color: #fff; background: var(--forest-deep) url('images/hero.png') center 62%/cover no-repeat; }
+.forest-band-shade { position: absolute; inset: 0; background: rgba(5,27,18,.88); }
+.story-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center; }
+.story-grid h2 { font-size: clamp(42px, 4.4vw, 66px); line-height: 1.12; letter-spacing: -.035em; margin: 0; }
+.story-copy { border-left: 1px solid rgba(212,185,116,.55); padding-left: 54px; }
+.story-copy p { font-size: 16px; line-height: 1.85; color: rgba(255,255,255,.78); }
+.story-copy blockquote { margin: 28px 0 0; font-family: Georgia, serif; font-size: 21px; color: var(--gold-light); font-style: italic; }
+.order-section { background: var(--cream); }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #d7d0c1; border-bottom: 1px solid #d7d0c1; }
+.steps article { position: relative; padding: 46px 42px 48px; border-right: 1px solid #d7d0c1; }
+.steps article:last-child { border: 0; }
+.steps article > span { position: absolute; top: 20px; right: 22px; font-family: Georgia, serif; font-size: 13px; color: var(--gold); }
+.steps svg { width: 42px; height: 42px; fill: none; stroke: var(--gold); stroke-width: 1.3; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 24px; }
+.steps h3 { font-size: 27px; margin-bottom: 14px; }
+.steps p { color: var(--muted); font-size: 14px; line-height: 1.7; margin: 0; }
+.service-strip { margin-top: 34px; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--forest); color: white; }
+.service-strip div { padding: 24px 28px; border-right: 1px solid rgba(255,255,255,.15); display: flex; flex-direction: column; gap: 7px; }
+.service-strip div:last-of-type { border: 0; }
+.service-strip strong { font-family: Georgia, serif; font-size: 20px; font-weight: 400; color: var(--gold-light); }
+.service-strip span { font-size: 12px; color: rgba(255,255,255,.72); }
+.service-strip small { grid-column: 1/-1; background: rgba(0,0,0,.15); padding: 10px 28px; color: rgba(255,255,255,.55); font-size: 10px; }
+.contact-section { background: var(--forest-deep); color: #fff; padding: 108px 0; }
+.contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 120px; align-items: center; }
+.contact-grid h2 { font-size: clamp(48px, 5vw, 70px); line-height: 1.08; letter-spacing: -.04em; margin-bottom: 26px; }
+.contact-intro { color: rgba(255,255,255,.65); line-height: 1.7; max-width: 430px; margin-bottom: 30px; }
+.button-gold { background: var(--gold); color: var(--forest-deep); }
+.button-gold:hover { background: var(--gold-light); }
+.contact-card { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid rgba(212,185,116,.35); }
+.contact-card div { min-height: 145px; padding: 28px 30px; border-right: 1px solid rgba(212,185,116,.25); border-bottom: 1px solid rgba(212,185,116,.25); }
+.contact-card div:nth-child(2n) { border-right: 0; }
+.contact-card div:nth-child(n+3) { border-bottom: 0; }
+.contact-card span { display: block; color: var(--gold-light); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; font-weight: 800; margin-bottom: 13px; }
+.contact-card strong, .contact-card a { font-family: Georgia, serif; font-weight: 400; font-size: 18px; line-height: 1.55; overflow-wrap: anywhere; }
+.contact-card a { text-decoration: underline; text-underline-offset: 4px; }
+footer { background: #05120d; color: rgba(255,255,255,.55); border-top: 1px solid rgba(255,255,255,.1); }
+.footer-inner { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 30px; font-size: 11px; }
+.footer-inner .brand { color: #fff; font-size: 22px; }
+.footer-inner .brand-icon { width: 32px; height: 32px; flex-basis: 32px; border-radius: 7px; }
+
+@media (max-width: 980px) {
+  .shell { width: min(100% - 48px, 760px); }
+  .desktop-nav { display: none; }
+  .mobile-nav { display: block; position: relative; }
+  .mobile-nav summary { list-style: none; width: 44px; height: 44px; display: grid; place-content: center; gap: 5px; cursor: pointer; border: 1px solid rgba(255,255,255,.3); }
+  .mobile-nav summary::-webkit-details-marker { display: none; }
+  .mobile-nav summary span { width: 20px; height: 1px; background: white; }
+  .mobile-nav > div { position: absolute; right: 0; top: 52px; width: 210px; background: var(--cream); color: var(--forest); padding: 10px; box-shadow: 0 16px 30px rgba(0,0,0,.25); }
+  .mobile-nav a { display: block; padding: 12px; font-weight: 700; }
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+  .story-grid, .contact-grid { grid-template-columns: 1fr; gap: 52px; }
+  .steps { grid-template-columns: 1fr; }
+  .steps article { border-right: 0; border-bottom: 1px solid #d7d0c1; }
+  .steps article:last-child { border-bottom: 0; }
+  .notice-tail { display: none; }
+  .footer-inner { flex-wrap: wrap; padding: 28px 0; }
+}
+
+@media (max-width: 640px) {
+  .shell { width: calc(100% - 36px); }
+  .hero { min-height: 720px; background-position: 62% center; }
+  .site-header { height: 84px; }
+  .brand { font-size: 23px; gap: 9px; }
+  .brand-icon { width: 34px; height: 34px; flex-basis: 34px; border-radius: 8px; }
+  .hero-content { padding-top: 80px; }
+  h1 { font-size: 44px; }
+  .hero-lead { font-size: 17px; }
+  .hero-actions { align-items: stretch; flex-direction: column; max-width: 310px; }
+  .notice-inner { padding: 14px 0; align-items: flex-start; gap: 12px; flex-direction: column; }
+  .notice-label { flex: 0 0 auto; }
+  .notice p { line-height: 1.45; }
+  .section { padding: 78px 0; }
+  .section-heading { margin-bottom: 38px; }
+  .section-heading h2 { font-size: 42px; }
+  .product-grid { grid-template-columns: 1fr; }
+  .forest-band { padding: 78px 0; }
+  .story-copy { padding-left: 24px; }
+  .service-strip { grid-template-columns: 1fr; }
+  .service-strip div { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.15); }
+  .contact-section { padding: 78px 0; }
+  .contact-card { grid-template-columns: 1fr; }
+  .contact-card div { min-height: 0; border-right: 0; border-bottom: 1px solid rgba(212,185,116,.25) !important; }
+  .contact-card div:last-child { border-bottom: 0 !important; }
+  .footer-inner { align-items: flex-start; flex-direction: column; gap: 12px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero" id="start">
+    <div class="hero-shade"></div>
+    <header class="site-header shell">
+      <a class="brand" href="#start" aria-label="Grzyby Kochanów — strona główna"><img class="brand-icon" src="images/favicon.svg" alt="" aria-hidden="true"><span>Grzyby Kochanów</span></a>
+      <nav class="desktop-nav" aria-label="Główna nawigacja">
+        <a href="#oferta">Oferta</a><a href="#zamowienie">Jak zamówić</a><a href="#onas">O nas</a><a href="#kontakt">Kontakt</a>
+      </nav>
+      <details class="mobile-nav">
+        <summary aria-label="Otwórz menu"><span></span><span></span><span></span></summary>
+        <div><a href="#oferta">Oferta</a><a href="#zamowienie">Jak zamówić</a><a href="#onas">O nas</a><a href="#kontakt">Kontakt</a></div>
+      </details>
+    </header>
+    <div class="hero-content shell">
+      <p class="eyebrow">Lokalne zbiory · Kochanów</p>
+      <h1>Świeże grzyby prosto<br>z lasów Kochanowa</h1>
+      <div class="gold-line"></div>
+      <p class="hero-lead">Sezonowe zbiory, naturalny smak i odbiór bezpośrednio na miejscu.</p>
+      <div class="hero-actions">
+        <a class="button button-light" href="#oferta">Sprawdź ofertę <span>↓</span></a>
+        <span class="availability"><i></i> Aktualnie brak towaru</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="notice" aria-label="Informacja o dostępności">
+    <div class="shell notice-inner">
+      <span class="notice-label">Ważna informacja</span>
+      <p>Ze względu na suszę i brak grzybów w lasach obecnie nie prowadzimy sprzedaży.</p>
+      <span class="notice-tail">Poinformujemy, gdy zbiory wrócą.</span>
+    </div>
+  </section>
+
+  <section class="section products-section" id="oferta">
+    <div class="shell">
+      <div class="section-heading">
+        <p class="eyebrow green">Dary okolicznych lasów</p>
+        <h2>Nasza sezonowa oferta</h2>
+        <p>Sprzedajemy tylko świeże grzyby, zbierane lokalnie i dostępne zgodnie z rytmem natury.</p>
+      </div>
+      <div class="product-grid">
+        <article class="product-card"><div class="product-image"><img src="images/borowiki.png" alt="Borowiki na leśnym mchu" loading="lazy"><span>Sezonowe</span></div><div class="product-copy"><p>Bestseller</p><h3>Borowiki</h3><span>Szlachetne, jędrne i wyjątkowo aromatyczne.</span></div></article>
+        <article class="product-card"><div class="product-image"><img src="images/kurki.png" alt="Kurki na leśnym mchu" loading="lazy"><span>Sezonowe</span></div><div class="product-copy"><p>Najpopularniejsze</p><h3>Kurki</h3><span>Delikatne, złociste i doskonałe do sosów.</span></div></article>
+        <article class="product-card"><div class="product-image"><img src="images/maslaki.png" alt="Maślaki na leśnym mchu" loading="lazy"><span>Sezonowe</span></div><div class="product-copy"><p>Lokalna specjalność</p><h3>Maślaki</h3><span>Miękkie, leśne i pełne naturalnego smaku.</span></div></article>
+        <article class="product-card"><div class="product-image"><img src="images/podgrzybki.png" alt="Podgrzybki na leśnym mchu" loading="lazy"><span>Sezonowe</span></div><div class="product-copy"><p>Kochanów Ekskluziw</p><h3>Podgrzybki</h3><span>Uniwersalne grzyby o głębokim aromacie.</span></div></article>
+      </div>
+      <p class="season-note"><img class="favicon-mark" src="images/favicon.svg" alt="" aria-hidden="true"> Więcej leśnych skarbów pojawi się wraz z kolejnymi zbiorami.</p>
+    </div>
+  </section>
+
+  <section class="forest-band" id="onas">
+    <div class="forest-band-shade"></div>
+    <div class="shell story-grid">
+      <div><p class="eyebrow gold">Blisko lasu. Blisko Ciebie.</p><h2>Grzyby z Kochanowa,<br>zbierane lokalnie</h2></div>
+      <div class="story-copy"><p>Jesteśmy lokalną sprzedażą grzybów w Kochanowie. Oferujemy borowiki, kurki, maślaki i podgrzybki — detalicznie oraz hurtowo, zawsze zgodnie z aktualną dostępnością.</p><blockquote>„Nie bierzesz byle czego — to nie są tanie rzeczy.”</blockquote></div>
+    </div>
+  </section>
+
+  <section class="section order-section" id="zamowienie">
+    <div class="shell">
+      <div class="section-heading"><p class="eyebrow green">Prosto i po sąsiedzku</p><h2>Jak kupić grzyby?</h2></div>
+      <div class="steps">
+        <article><span>01</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 5a11 11 0 1 0 0 22 11 11 0 0 0 0-22Zm0 5v7l5 3" /></svg><h3>Sprawdź dostępność</h3><p>Oferta zależy od pogody i bieżących zbiorów. Aktualny komunikat zawsze znajdziesz na górze strony.</p></article>
+        <article><span>02</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 11h18l-2 13H9L7 11Zm4 0 4-6m6 6-4-6M12 16v4m5-4v4m4-4v4" /></svg><h3>Zarezerwuj odbiór</h3><p>Napisz do nas e-mail. Potwierdzimy dostępny gatunek, ilość i ustalimy dogodny termin.</p></article>
+        <article><span>03</span><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 18h22l-2-7H9l-4 7Zm3 0v4m16-4v4M10 22h12M10 14h12" /></svg><h3>Odbierz lub zamów dowóz</h3><p>Odbierz w Kochanowie albo zapytaj o dowóz w okolicy. Możliwa sprzedaż detaliczna i hurtowa.</p></article>
+      </div>
+      <div class="service-strip">
+        <div><strong>Na wynos</strong><span>Koszt wiadra: 10 zł</span></div>
+        <div><strong>Dostawa lokalna</strong><span>Koszt paliwa od 5 zł*</span></div>
+        <div><strong>Ceny</strong><span>Atrakcyjne, możliwe do negocjacji</span></div>
+        <small>*Koszt dowozu zależy od aktualnej ceny paliwa i odległości.</small>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="kontakt">
+    <div class="shell contact-grid">
+      <div>
+        <p class="eyebrow gold">Kontakt i odbiór</p><h2>Zapraszamy<br>do Kochanowa</h2>
+        <p class="contact-intro">Przed przyjazdem napisz, aby potwierdzić dostępność aktualnych zbiorów.</p>
+        <a class="button button-gold" href="mailto:borowickibiznes@gmail.com">Napisz do nas <span>↗</span></a>
+      </div>
+      <div class="contact-card">
+        <div><span>Adres</span><strong>Kochanów 13<br>26-422 Borkowice</strong></div>
+        <div><span>Godziny</span><strong>Poniedziałek–niedziela<br>9:00–19:00</strong></div>
+        <div><span>E-mail</span><a href="mailto:borowickibiznes@gmail.com">borowickibiznes@gmail.com</a></div>
+        <div><span>Telefon</span><strong>W trakcie uruchamiania</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <footer><div class="shell footer-inner"><a class="brand" href="#start"><img class="brand-icon" src="images/favicon.svg" alt="" aria-hidden="true"><span>Grzyby Kochanów</span></a><p>Sprzedaż sezonowych grzybów · Kochanów, gmina Borkowice</p><span>© 2026 Grzyby Kochanów</span></div></footer>
+</main>
+</body>
+</html>
